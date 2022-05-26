@@ -1,5 +1,6 @@
 package com.example.bootcamptoolbar
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -22,6 +23,14 @@ class MainActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         setTitle()
+        setOnClickListener()
+    }
+
+    private fun setOnClickListener() {
+        binding.buttonGoTo.setOnClickListener {
+            val intent = Intent(this, SecondActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun setTitle() {
