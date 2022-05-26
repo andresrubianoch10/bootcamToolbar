@@ -3,6 +3,8 @@ package com.example.bootcamptoolbar
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
+import android.widget.Toast
 import com.example.bootcamptoolbar.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -33,5 +35,23 @@ class MainActivity : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.main_menu, menu)
         return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean = when (item.itemId) {
+        R.id.action_search -> {
+            showToolbar("Search")
+            true
+        }
+        R.id.action_settings -> {
+            showToolbar("settings")
+            true
+        }
+        else -> {
+            super.onOptionsItemSelected(item)
+        }
+    }
+
+    private fun showToolbar(text: String) {
+        Toast.makeText(this, text, Toast.LENGTH_LONG).show()
     }
 }
