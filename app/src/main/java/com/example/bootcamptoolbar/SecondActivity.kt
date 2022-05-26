@@ -1,5 +1,6 @@
 package com.example.bootcamptoolbar
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.bootcamptoolbar.databinding.ActivitySecondBinding
@@ -21,6 +22,10 @@ class SecondActivity : AppCompatActivity() {
         supportActionBar?.apply {
             title = "Second Activity"
             setDisplayHomeAsUpEnabled(true)
+        }
+        binding.buttonSecondAct.setOnClickListener {
+            val intent = Intent(this, ThirdActivity::class.java)
+            startActivity(intent)
         }
     }
 }
