@@ -2,6 +2,7 @@ package com.example.bootcamptoolbar
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
 import com.example.bootcamptoolbar.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -25,6 +26,12 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.apply {
             title = "Bootcamp Android"
             subtitle = "Mayo 26"
+            //hide()
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return true
     }
 }
