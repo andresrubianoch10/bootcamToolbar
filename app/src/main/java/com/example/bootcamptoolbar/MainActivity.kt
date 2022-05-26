@@ -12,5 +12,19 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        setSupportActionBar(binding.toolbarMain)
+    }
+
+    override fun onStart() {
+        super.onStart()
+        setTitle()
+    }
+
+    private fun setTitle() {
+        supportActionBar?.apply {
+            title = "Bootcamp Android"
+            subtitle = "Mayo 26"
+        }
     }
 }
